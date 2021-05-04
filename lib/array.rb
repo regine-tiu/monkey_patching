@@ -43,3 +43,40 @@ class Array
     count
   end 
 end  
+
+class Array
+  def my_count(ele)
+    count = Hash.new(0)
+    self.each {|ele| count[ele] += 1}
+    count[ele]
+  end  
+
+  def my_index(target)
+    self.each_with_index do |ele, i|
+      if ele == target
+        return i
+      end  
+    end
+    nil
+  end  
+
+  def my_uniq
+    hash = {}
+    self.each {|ele| hash[ele] = true}
+    hash.keys  
+  end  
+
+  def my_transpose
+    new_arr = []
+
+    (0...self.length).each do |row|
+      new_row = []
+      (0...self.length).each do |col|
+        new_row << self[col][row]
+      end 
+      new_arr << new_row
+    end
+    new_arr  
+  end  
+
+end  
