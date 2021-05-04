@@ -44,6 +44,8 @@ describe "Array" do
       context "when there is an even number of elements" do
         it "should return the average of the two middle elements when sorted" do
           expect([3, 8, 4, 5].median).to eq(4.5)
+          # [3, 4, 5, 8]
+          # (0, 1, 2, 3)
           expect([10, 23].median).to eq(16.5)
         end
       end
